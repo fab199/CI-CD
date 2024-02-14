@@ -144,3 +144,41 @@ Added a new node named `Kops` and Configure the node to connect via SSH using th
 <br/>
 <img src="https://i.imgur.com/mGMb2Uj.png" height="80%" width="80%" alt="Kops as jenkins slave"/>
 <br />
+
+<h2>Creating a Jenkins job for the pipeline and test its execution</h2>
+
+Steps taken:
+
+   - Create a new job in Jenkins named `kube-cicd`.
+   - Configured the job to clone the source code from Git repository.
+   - Used the project repository and the branch.
+
+<br/>
+<img src="https://i.imgur.com/QhJxZsH.png" height="80%" width="80%" alt="Kops as jenkins slave"/>
+<br />
+
+Run the job and monitored the progress.
+<br/>
+<img src="https://i.imgur.com/mGEiuGX.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
+
+The project completed successfully.
+<br/>
+<img src="https://i.imgur.com/xkuc0cY.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
+
+<h2>Verification</h2>
+
+
+   - Verified the deployment on the Kubernetes cluster.
+   - Checked the status of pods and confirm that the latest image is deployed.
+   
+<br/>
+<img src="https://i.imgur.com/b8FA602.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
+
+**Got the load balancer URL to check the application on the browser.**
+
+<br/>
+<img src="https://i.imgur.com/qkSYzcs.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
