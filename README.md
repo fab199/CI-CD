@@ -56,3 +56,10 @@ Log into Jenkins and set up SonarQube integration and then create Kubernetes Clu
 <br/>
 <img src="https://i.imgur.com/jNmjuKX.png" height="80%" width="80%" alt="jenkins, sonarqube integration"/>
 <br />
+
+
+<h2>Store the details of Docker Hub logins into Jenkins credentials.</h2>
+
+<br/>
+<img src="https://i.imgur.com/bbhEF0c.png" height="80%" width="80%" alt="jenkins credentials"/>
+<br />
