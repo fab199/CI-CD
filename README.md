@@ -44,8 +44,8 @@ This architectural design ensures a seamless flow from code changes to deploymen
    - Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
    - Create a Kubernetes cluster using kops and install Helm on the kops VM.
    - Develop Helm charts with application image variables and test them in a designated Kubernetes namespace.
-   - Add the kops VM as a Jenkins slave.
    - Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
+   - Add the kops VM as a Jenkins slave.
    - Update the Git repository with Dockerfiles, Helm charts, and Jenkinsfile.
    - Finally, create a Jenkins job for the pipeline and test its execution.
 
@@ -131,3 +131,11 @@ Steps Taken:
    - Create a directory named `Jenkins` in the home directory of the Ubuntu user.
    - Assign ownership of the `Jenkins` directory to the Ubuntu user.
    - Update the security group of the Kops EC2 instance to allow SSH connections from Jenkins.
+
+<h2>Add the kops VM as a Jenkins slave</h2>
+
+Added a new node named `Kops` and Configure the node to connect via SSH using the private IP address of the Kops EC2 instance, Ubuntu username, and SSH private key.
+
+<br/>
+<img src="https://i.imgur.com/mGMb2Uj.png" height="80%" width="80%" alt="Kops as jenkins slave"/>
+<br />
