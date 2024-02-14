@@ -71,3 +71,9 @@ Installing Docker engine in the Jenkins server because I'll be running docker bu
 <br/>
 <img src="https://i.imgur.com/HdOCdcy.png" height="80%" width="80%" alt="jenkins credentials"/>
 <br />
+
+Installed pluggins such as docker, docker pipeline and pipeline utility.
+<br/>
+<img src="https://i.imgur.com/CDqsSoN.png" height="80%" width="80%" alt="pluggins"/>
+<br />
+
