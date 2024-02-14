@@ -51,4 +51,8 @@ This architectural design ensures a seamless flow from code changes to deploymen
 
 <h2>Set up continuous integration with Jenkins, SonarQube and Nexus</h2>
 
+Log into Jenkins and set up SonarQube integration and then create Kubernetes Cluster from Kops
 
+<br/>
+<img src="https://i.imgur.com/jNmjuKX.png" height="80%" width="80%" alt="jenkins, sonarqube integration"/>
+<br />
