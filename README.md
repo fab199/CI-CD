@@ -44,7 +44,7 @@ This architectural design ensures a seamless flow from code changes to deploymen
    - Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
    - Create a Kubernetes cluster using kops and install Helm on the kops VM.
    - Develop Helm charts with application image variables and test them in a designated Kubernetes namespace.
-   - Add the Cops VM as a Jenkins slave.
+   - Add the kops VM as a Jenkins slave.
    - Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
    - Update the Git repository with Dockerfiles, Helm charts, and Jenkinsfile.
    - Finally, create a Jenkins job for the pipeline and test its execution.
@@ -87,4 +87,18 @@ Helm is a packaging system for definition files, Where you can package all the d
 
 <br/>
 <img src="https://i.imgur.com/btDOk5J.png" height="80%" width="80%" alt="pluggins"/>
+<br />
+
+<h2>Develop Helm charts with application image variables</h2>
+
+ **Helm Chart Creation**:
+   - Navigate into the `helm` directory.
+   - Run the command `helm create vprofile-charts` to create a Helm chart named `vprofile-charts`.
+   - Navigate into the `vprofile-charts/templates` directory.
+   - Remove all sample template files.
+   - Copy all contents from the `kubernetes/app` directory of the source code repository to the `vprofile-charts/templates` directory in the new repository.
+   - Open the `vprofile-application-deployment.yaml` file and replace the static image reference with a variable reference (`{{ .Values.appImage }}`) for dynamic image deployment.
+
+<br/>
+<img src="https://i.imgur.com/SQnmiZB.png" height="80%" width="80%" alt="pluggins"/>
 <br />
