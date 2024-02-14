@@ -39,7 +39,7 @@ This architectural design ensures a seamless flow from code changes to deploymen
 <h2>Project Execution Steps:</h2>
 <br/>
 
-   - Set up continuous integration with Jenkins and SonarQube.
+   - Set up continuous integration with Jenkins, SonarQube and Nexus.
    - Create or use an existing Docker Hub account and store credentials in Jenkins.
    - Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
    - Create a Kubernetes cluster using Cops and install Helm on the Cops VM.
@@ -48,3 +48,7 @@ This architectural design ensures a seamless flow from code changes to deploymen
    - Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
    - Update the Git repository with Dockerfiles, Helm charts, and Jenkinsfile.
    - Finally, create a Jenkins job for the pipeline and test its execution.
+
+<h2>Set up continuous integration with Jenkins, SonarQube and Nexus</h2>
+
+
