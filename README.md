@@ -63,3 +63,11 @@ Log into Jenkins and set up SonarQube integration and then create Kubernetes Clu
 <br/>
 <img src="https://i.imgur.com/bbhEF0c.png" height="80%" width="80%" alt="jenkins credentials"/>
 <br />
+
+
+<h2>Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).</h2>
+
+Installing Docker engine in the Jenkins server.
+<br/>
+<img src="https://i.imgur.com/HdOCdcy.png" height="80%" width="80%" alt="jenkins credentials"/>
+<br />
