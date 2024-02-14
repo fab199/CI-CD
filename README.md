@@ -113,3 +113,21 @@ Helm is a packaging system for definition files, Where you can package all the d
 <img src="https://i.imgur.com/s3LhhsG.png" height="80%" width="80%" alt="helm charts"/>
 <br />
 
+<h2>Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.</h2>
+
+Steps Taken:
+
+1. **Jenkinsfile Creation**:
+   - Open IntelliJ IDEA.
+   - Create a new project from version control using the repository containing the source code.
+   - Create a new file named `Jenkinsfile` in the `helm/charts` directory.
+   - Define new variables for the Docker Hub registry, image name, and Jenkins credentials.
+   - Add new stages for building and uploading Docker images, pushing images to Docker Hub, and removing unused Docker images.
+   - Add a stage for deploying the application to Kubernetes cluster using Helm.
+   - Update the stage for SonarQube analysis to use the correct tool name.
+
+2. **Kops EC2 Instance Setup**:
+   - Install OpenJDK 8 JDK on the Kops EC2 instance.
+   - Create a directory named `Jenkins` in the home directory of the Ubuntu user.
+   - Assign ownership of the `Jenkins` directory to the Ubuntu user.
+   - Update the security group of the Kops EC2 instance to allow SSH connections from Jenkins.
