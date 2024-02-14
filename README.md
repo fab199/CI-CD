@@ -40,32 +40,32 @@ This architectural design ensures a seamless flow from code changes to deploymen
 <br/>
 
    - Set up continuous integration with Jenkins, SonarQube and Nexus.
-   - Create or use an existing Docker Hub account and store credentials in Jenkins.
-   - Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
-   - Create a Kubernetes cluster using kops and install Helm on the kops VM.
-   - Develop Helm charts with application image variables and test them in a designated Kubernetes namespace.
-   - Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
-   - Add the kops VM as a Jenkins slave.
-   - Update the Git repository with Dockerfiles, Helm charts, and Jenkinsfile.
-   - Finally, create a Jenkins job for the pipeline and test its execution.
+   - Created or use an existing Docker Hub account and store credentials in Jenkins.
+   - Configured Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
+   - Created a Kubernetes cluster using kops and install Helm on the kops VM.
+   - Developed Helm charts with application image variables and test them in a designated Kubernetes namespace.
+   - Created a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
+   - Added the kops VM as a Jenkins slave.
+   - Updated the Git repository with Dockerfiles, Helm charts, and Jenkinsfile.
+   - Finally, created a Jenkins job for the pipeline and test its execution.
 
 <h2>Set up continuous integration with Jenkins, SonarQube and Nexus</h2>
 
-Log into Jenkins and set up SonarQube integration and then create Kubernetes Cluster from Kops
+Logged into Jenkins and set up SonarQube integration and then create Kubernetes Cluster from Kops
 
 <br/>
 <img src="https://i.imgur.com/jNmjuKX.png" height="80%" width="80%" alt="jenkins, sonarqube integration"/>
 <br />
 
 
-<h2>Store the details of Docker Hub logins into Jenkins credentials.</h2>
+<h2>Stored the details of Docker Hub logins into Jenkins credentials.</h2>
 
 <br/>
 <img src="https://i.imgur.com/bbhEF0c.png" height="80%" width="80%" alt="jenkins credentials"/>
 <br />
 
 
-<h2>Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).</h2>
+<h2>Configured Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).</h2>
 
 Installing Docker engine in the Jenkins server because I'll be running docker build command from Jenkins.
 <br/>
@@ -77,7 +77,7 @@ Installed pluggins such as docker, docker pipeline and pipeline utility.
 <img src="https://i.imgur.com/CDqsSoN.png" height="80%" width="80%" alt="pluggins"/>
 <br />
 
-<h2>Create a Kubernetes cluster using kops and install Helm on the kops VM.</h2>
+<h2>Created a Kubernetes cluster using kops and install Helm on the kops VM.</h2>
 
 <br/>
 <img src="https://i.imgur.com/mwEshsG.png" height="80%" width="80%" alt="pluggins"/>
@@ -89,15 +89,15 @@ Helm is a packaging system for definition files, Where you can package all the d
 <img src="https://i.imgur.com/btDOk5J.png" height="80%" width="80%" alt="pluggins"/>
 <br />
 
-<h2>Develop Helm charts with application image variables</h2>
+<h2>Developed Helm charts with application image variables</h2>
 
  **Helm Chart Creation**:
-   - Navigate into the `helm` directory.
+   - Navigated into the `helm` directory.
    - Run the command `helm create vprofile-charts` to create a Helm chart named `vprofile-charts`.
-   - Navigate into the `vprofile-charts/templates` directory.
-   - Remove all sample template files.
-   - Copy all contents from the `kubernetes/app` directory of the source code repository to the `vprofile-charts/templates` directory in the new repository.
-   - Open the `vprofile-application-deployment.yaml` file and replace the static image reference with a variable reference (`{{ .Values.appImage }}`) for dynamic image deployment.
+   - Navigated into the `vprofile-charts/templates` directory.
+   - Removed all sample template files.
+   - Copied all contents from the `kubernetes/app` directory of the source code repository to the `vprofile-charts/templates` directory in the new repository.
+   - Opened the `vprofile-application-deployment.yaml` file and replace the static image reference with a variable reference (`{{ .Values.appImage }}`) for dynamic image deployment.
 
 <br/>
 <img src="https://i.imgur.com/SQnmiZB.png" height="80%" width="80%" alt="helm setup"/>
@@ -113,24 +113,29 @@ Helm is a packaging system for definition files, Where you can package all the d
 <img src="https://i.imgur.com/s3LhhsG.png" height="80%" width="80%" alt="helm charts"/>
 <br />
 
-<h2>Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.</h2>
+<h2>Created a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.</h2>
 
 Steps Taken:
 
 1. **Jenkinsfile Creation**:
-   - Open IntelliJ IDEA.
-   - Create a new project from version control using the repository containing the source code.
-   - Create a new file named `Jenkinsfile` in the `helm/charts` directory.
-   - Define new variables for the Docker Hub registry, image name, and Jenkins credentials.
-   - Add new stages for building and uploading Docker images, pushing images to Docker Hub, and removing unused Docker images.
-   - Add a stage for deploying the application to Kubernetes cluster using Helm.
-   - Update the stage for SonarQube analysis to use the correct tool name.
+   - Created a new project from version control using the repository containing the source code.
+   - Created a new file named `Jenkinsfile` in the `helm/charts` directory.
+   - Defined new variables for the Docker Hub registry, image name, and Jenkins credentials.
+   - Added new stages for building and uploading Docker images, pushing images to Docker Hub, and removing unused Docker images.
+   - Added a stage for deploying the application to Kubernetes cluster using Helm.
+   - Updated the stage for SonarQube analysis to use the correct tool name.
 
 2. **Kops EC2 Instance Setup**:
-   - Install OpenJDK 8 JDK on the Kops EC2 instance.
-   - Create a directory named `Jenkins` in the home directory of the Ubuntu user.
-   - Assign ownership of the `Jenkins` directory to the Ubuntu user.
-   - Update the security group of the Kops EC2 instance to allow SSH connections from Jenkins.
+   - Installed OpenJDK 8 JDK on the Kops EC2 instance.
+   - Created a directory named `Jenkins` in the home directory of the Ubuntu user.
+   - Assigned ownership of the `Jenkins` directory to the Ubuntu user.
+   - Updated the security group of the Kops EC2 instance to allow SSH connections from Jenkins.
+
+3. **Helm Deployment**:
+   - Wrote a stage in the Jenkinsfile to deploy the application to the Kubernetes cluster using Helm.
+   - Ensured that the Helm commands are executed on the Kops EC2 instance.
+   - Set the namespace for deployment to `prod`.
+
 
 <h2>Add the kops VM as a Jenkins slave</h2>
 
