@@ -100,5 +100,16 @@ Helm is a packaging system for definition files, Where you can package all the d
    - Open the `vprofile-application-deployment.yaml` file and replace the static image reference with a variable reference (`{{ .Values.appImage }}`) for dynamic image deployment.
 
 <br/>
-<img src="https://i.imgur.com/SQnmiZB.png" height="80%" width="80%" alt="pluggins"/>
+<img src="https://i.imgur.com/SQnmiZB.png" height="80%" width="80%" alt="helm setup"/>
 <br />
+
+<br/>
+<img src="https://i.imgur.com/iAlzbKf.png" height="80%" width="80%" alt="helm"/>
+<br />
+
+`See everything getting created, which includes the pods, service deployment, replica sets. So that's the complete stack deployment by using one command.`
+
+<br/>
+<img src="https://i.imgur.com/s3LhhsG.png" height="80%" width="80%" alt="helm charts"/>
+<br />
+
