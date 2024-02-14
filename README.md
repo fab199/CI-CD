@@ -182,3 +182,13 @@ The project completed successfully.
 <br/>
 <img src="https://i.imgur.com/qkSYzcs.png" height="80%" width="80%" alt="Run jobs"/>
 <br />
+
+So the App is up and running.
+<br/>
+<img src="https://i.imgur.com/bUc8nWa.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
+<br/>
+<img src="https://i.imgur.com/naLlSpy.png" height="80%" width="80%" alt="Run jobs"/>
+<br />
+
+`The entire application stack is deployed successfully by using Helm from Jenkins and fetching the latest image for the application.`
