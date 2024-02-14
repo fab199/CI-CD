@@ -42,7 +42,7 @@ This architectural design ensures a seamless flow from code changes to deploymen
    - Set up continuous integration with Jenkins, SonarQube and Nexus.
    - Create or use an existing Docker Hub account and store credentials in Jenkins.
    - Configure Docker Engine in Jenkins and install necessary plugins (docker pipeline, docker, pipeline utility).
-   - Create a Kubernetes cluster using Cops and install Helm on the Cops VM.
+   - Create a Kubernetes cluster using kops and install Helm on the kops VM.
    - Develop Helm charts with application image variables and test them in a designated Kubernetes namespace.
    - Add the Cops VM as a Jenkins slave.
    - Create a declarative pipeline in Jenkins, defining build, test, Docker build, and Helm chart deployment processes.
@@ -77,3 +77,14 @@ Installed pluggins such as docker, docker pipeline and pipeline utility.
 <img src="https://i.imgur.com/CDqsSoN.png" height="80%" width="80%" alt="pluggins"/>
 <br />
 
+<h2>Create a Kubernetes cluster using kops and install Helm on the kops VM.</h2>
+
+<br/>
+<img src="https://i.imgur.com/mwEshsG.png" height="80%" width="80%" alt="pluggins"/>
+<br />
+
+Helm is a packaging system for definition files, Where you can package all the definition files for your project stack and it can also be deployed to Kubernetes cluster. So instead of managinging and maintaining all the definition files seperately, you can use Helm to package all of them and run them or update them on Kubernetes cluster.
+
+<br/>
+<img src="https://i.imgur.com/btDOk5J.png" height="80%" width="80%" alt="pluggins"/>
+<br />
